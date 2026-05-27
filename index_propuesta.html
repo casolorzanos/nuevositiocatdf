@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATDF - Cuerpo de Agentes de Tránsito</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos (FontAwesome CDN para demo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #D32F2F; /* Rojo CATDF */
+            --primary-dark: #B71C1C;
+            --secondary: #263238; /* Gris Oscuro */
+            --accent: #FFC107; /* Amarillo Tránsito */
+            --bg-light: #F9FAFB;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        .btn-login {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-login:hover { background-color: var(--primary-dark); }
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(38, 50, 56, 0.7), rgba(38, 50, 56, 0.7)), url('https://images.unsplash.com/photo-1573167507349-429982c7d8e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            box-shadow: 0 10px 15px -3px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn-hero:hover { transform: translateY(-3px); }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title span {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* NOSOTROS */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--secondary); }
+        .about-text p { color: var(--text-light); margin-bottom: 1rem; }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat-item strong { display: block; font-size: 2rem; color: var(--primary); }
+        .stat-item span { font-size: 0.9rem; color: var(--text-light); }
+
+        /* SERVICIOS */
+        .services { background-color: var(--bg-light); }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            text-align: center;
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--primary);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 { margin-bottom: 1rem; color: var(--secondary); }
+        .card p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* NOVEDADES */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .news-img {
+            height: 200px;
+            background-color: #ddd;
+            background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+        }
+
+        .news-content { padding: 1.5rem; }
+        .news-date { font-size: 0.8rem; color: var(--primary); font-weight: 600; margin-bottom: 0.5rem; display: block; }
+        .news-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .news-content p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* CONTACTO */
+        .contact { background-color: var(--secondary); color: white; }
+        .contact .section-title h2 { color: white; }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .contact-item i { color: var(--primary); }
+
+        form { display: flex; flex-direction: column; gap: 1rem; }
+        input, textarea {
+            padding: 1rem;
+            border-radius: var(--radius);
+            border: none;
+            font-family: inherit;
+        }
+        button[type="submit"] {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button[type="submit"]:hover { background-color: var(--primary-dark); }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a2327;
+            color: #9ca3af;
+            padding: 2rem 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header { padding: 1rem; }
+            nav ul { display: none; } /* En prod se usaría menú hamburguesa */
+            .hero-content h1 { font-size: 2.5rem; }
+            .contact-container { grid-template-columns: 1fr; }
+            .logo span { display: none; } /* Ocultar texto logo en móvil si es muy largo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>CATDF</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Institucional</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#novedades">Novedades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-login"><i class="fa-solid fa-user-lock"></i> Acceso Socios</a>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Seguridad Vial y <br>Compromiso Profesional</h1>
+            <p>Defendiendo los derechos de los Agentes de Tránsito y promoviendo una ciudad más segura para todos.</p>
+            <a href="#servicios" class="btn-hero">Conocer Beneficios</a>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros">
+        <div class="section-title">
+            <h2>Nuestra Institución</h2>
+            <span></span>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Más que un gremio, una familia</h3>
+                <p>El Cuerpo de Agentes de Tránsito y Seguridad Vial de la Ciudad de Buenos Aires trabaja día a día para garantizar el orden en nuestras calles.</p>
+                <p>Nuestro sindicato busca el bienestar integral de sus afiliados, ofreciendo respaldo legal, capacitación constante y beneficios exclusivos.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <strong>+20</strong>
+                        <span>Años de Historia</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>100%</strong>
+                        <span>Compromiso</span>
+                    </div>
+                </div>
+            </div>
+            <div style="background: #eee; height: 300px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: #aaa;">
+                <i class="fa-solid fa-users" style="font-size: 5rem;"></i>
+                <!-- Aquí iría una foto real del equipo -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="section-title">
+            <h2>Beneficios y Servicios</h2>
+            <span></span>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h3>Asesoría Legal</h3>
+                <p>Respaldo jurídico completo para nuestros afiliados en cuestiones laborales y personales.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Capacitación</h3>
+                <p>Cursos de actualización en seguridad vial, primeros auxilios y normativa vigente.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Salud y Bienestar</h3>
+                <p>Convenios con obras sociales, gimnasios y centros de salud mental.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-plane-departure"></i>
+                <h3>Turismo</h3>
+                <p>Descuentos exclusivos en hoteles, viajes y paquetes turísticos en todo el país.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Novedades -->
+    <section id="novedades">
+        <div class="section-title">
+            <h2>Últimas Novedades</h2>
+            <span></span>
+        </div>
+        <div class="news-grid">
+            <article class="news-item">
+                <div class="news-img"></div>
+                <div class="news-content">
+                    <span class="news-date">Octubre 24, 2023</span>
+                    <h3>Nuevo convenio de capacitaciones</h3>
+                    <p>Se firmó un acuerdo para ampliar la oferta de cursos técnicos...</p>
+                </div>
+            </article>
+            <article class="news-item">
+                <div class="news-img" style="filter: hue-rotate(45deg);"></div>
+                <div class="news-content">
+                    <span class="news-date">Octubre 10, 2023</span>
+                    <h3>Jornada de vacunación gratuita</h3>
+                    <p>Este sábado realizaremos una jornada de salud preventiva en la sede...</p>
+                </div>
+            </article>
+            <article class="news-item">
+                <div class="news-img" style="filter: hue-rotate(90deg);"></div>
+                <div class="news-content">
+                    <span class="news-date">Septiembre 28, 2023</span>
+                    <h3>Actualización del escalafón</h3>
+                    <p>Información importante sobre los últimos ajustes salariales...</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="section-title">
+            <h2>Contacto</h2>
+            <span></span>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>¿Tenés alguna consulta?</h3>
+                <p style="margin-bottom: 2rem; opacity: 0.8;">Estamos para escucharte. Acercate a nuestra sede o envianos un mensaje.</p>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Av. Corrientes 1234, CABA</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(011) 4555-0000</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@catdf.org.ar</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>+54 9 11 1234-5678</span>
+                </div>
+            </div>
+            
+            <form>
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Teléfono">
+                <textarea rows="4" placeholder="Tu mensaje..." required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 CATDF - Cuerpo de Agentes de Tránsito y Seguridad Vial. Todos los derechos reservados.</p>
+        <div style="margin-top: 1rem; font-size: 1.2rem;">
+            <a href="#" style="margin: 0 10px;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll para navegación interna
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efecto simple de aparición al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card, .news-item, .about-text').forEach((el) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
