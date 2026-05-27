@@ -1,0 +1,1 @@
+Nothing needs to be added to the .gitignore file since the changes only include HTML files (site_claro.html, site_original.html) which are source files and not build artifacts, dependencies, or temporary files.

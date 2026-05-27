@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CATDF - Propuesta Oscura</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e171b;
+      --panel: #142126;
+      --panel-2: #1b2a30;
+      --text: #f4f1ea;
+      --muted: #a9b5b7;
+      --line: rgba(244, 241, 234, .14);
+      --accent: #ff3f2f;
+      --accent-2: #d9271d;
+      --glow: rgba(255, 63, 47, .34);
+      --warm: #ff7a45;
+      --green: #8bbf9f;
+      --shadow: 0 22px 70px rgba(0, 0, 0, .28);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(14, 23, 27, .84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      min-height: 76px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .mark {
+      width: 48px;
+      height: 48px;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px var(--glow));
+      animation: logoPulse 4.8s ease-in-out infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color .24s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .24s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 14px 34px rgba(255, 63, 47, .24);
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--accent-2);
+      border-color: var(--accent-2);
+      box-shadow: 0 18px 42px rgba(255, 63, 47, .34);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255, 63, 47, .12);
+      border-color: rgba(255, 63, 47, .54);
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 28%, rgba(255, 63, 47, .24), transparent 32%),
+        linear-gradient(90deg, rgba(14, 23, 27, .98) 0%, rgba(14, 23, 27, .7) 48%, rgba(14, 23, 27, .32) 100%),
+        url("img/ushuaia.jpg") center/cover;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border: 1px solid rgba(255, 63, 47, .28);
+      transform: rotate(45deg);
+      animation: drift 13s ease-in-out infinite;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      right: 8vw;
+      top: 12vh;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      right: 30vw;
+      bottom: 16vh;
+      animation-delay: -5s;
+      border-color: rgba(255, 122, 69, .26);
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 94px 0 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 370px;
+      gap: 42px;
+      align-items: end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 790px;
+      margin: 18px 0 18px;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: .95;
+      letter-spacing: 0;
+      animation: riseIn .76s ease-out both;
+    }
+
+    .lead {
+      max-width: 690px;
+      color: #d5ddde;
+      font-size: clamp(18px, 2vw, 22px);
+      margin: 0 0 30px;
+      animation: riseIn .76s .12s ease-out both;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      animation: riseIn .76s .22s ease-out both;
+    }
+
+    .status-panel {
+      background: rgba(20, 33, 38, .86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      animation: panelIn .86s .28s ease-out both;
+    }
+
+    .status-panel h2 {
+      font-size: 16px;
+      margin: 0 0 18px;
+    }
+
+    .metric {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: -22px 0 86px;
+      position: relative;
+      z-index: 2;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .quick a {
+      min-height: 132px;
+      padding: 22px;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .22s ease, background .22s ease, border-color .22s ease;
+      animation: riseIn .68s ease-out both;
+    }
+
+    .quick a:nth-child(2) { animation-delay: .08s; }
+    .quick a:nth-child(3) { animation-delay: .16s; }
+    .quick a:nth-child(4) { animation-delay: .24s; }
+
+    .quick a:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(160deg, rgba(255, 63, 47, .18), var(--panel));
+    }
+
+    .quick b {
+      font-size: 18px;
+    }
+
+    .quick span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1;
+    }
+
+    .section-head p {
+      max-width: 420px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      margin-bottom: 86px;
+    }
+
+    .feature-card, .stack-card, .agenda, .contact {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .feature-card:hover, .stack-card:hover, .agenda:hover, .contact:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 63, 47, .45);
+      box-shadow: 0 22px 54px rgba(0, 0, 0, .2), 0 0 0 1px rgba(255, 63, 47, .08);
+    }
+
+    .feature-card img {
+      height: 360px;
+      width: 100%;
+      object-fit: cover;
+      filter: saturate(.88) contrast(1.08);
+      transition: transform .7s ease, filter .7s ease;
+    }
+
+    .feature-card:hover img,
+    .stack-card:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.02) contrast(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .tag {
+      color: var(--warm);
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    h3 {
+      margin: 10px 0;
+      font-size: 25px;
+      line-height: 1.12;
+    }
+
+    .card-body p, .stack-card p, .agenda p, .contact p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .news-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .stack-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      min-height: 180px;
+      overflow: hidden;
+    }
+
+    .stack-card img {
+      height: 100%;
+      min-height: 180px;
+      object-fit: cover;
+      transition: transform .7s ease, filter .7s ease;
+    }
+
+    .agenda-contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 70px;
+    }
+
+    .agenda, .contact { padding: 28px; }
+
+    .agenda-row {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .date {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 30px 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      animation: riseIn .72s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 8% cover 28%;
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes panelIn {
+      from {
+        opacity: 0;
+        transform: translateX(24px) scale(.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes drift {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(45deg);
+      }
+      50% {
+        transform: translate3d(-18px, 22px, 0) rotate(50deg);
+      }
+    }
+
+    @keyframes logoPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 12px rgba(255, 63, 47, .34));
+        transform: scale(1);
+      }
+      50% {
+        filter: drop-shadow(0 0 24px rgba(255, 63, 47, .58));
+        transform: scale(1.035);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero-inner, .news-grid, .agenda-contact { grid-template-columns: 1fr; }
+      .quick { grid-template-columns: 1fr 1fr; }
+      .status-panel { max-width: 520px; }
+      .section-head { display: block; }
+      .stack-card { grid-template-columns: 1fr; }
+      .stack-card img { width: 100%; height: 220px; }
+    }
+
+    @media (max-width: 560px) {
+      .nav, main, .hero-inner { width: calc(100% - 32px); padding-left: 0; padding-right: 0; }
+      .quick { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      .hero-inner { padding-top: 72px; }
+      h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacion principal">
+      <a class="brand" href="#">
+        <img class="mark" src="assets/A-logo.png" alt="CATDF">
+        <span>Colegio de Arquitectos<br>de Tierra del Fuego</span>
+      </a>
+      <div class="nav-links">
+        <a href="#">Institucional</a>
+        <a href="#">Matriculacion</a>
+        <a href="#">Honorarios</a>
+        <a href="#">Noticias</a>
+        <a href="#">Contacto</a>
+      </div>
+      <a class="button" href="#">Autogestion</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Arquitectura fueguina</span>
+        <h1>Colegio de Arquitectos de Tierra del Fuego</h1>
+        <p class="lead">Matricula, ejercicio profesional, capacitaciones y comunidad para proyectar el territorio austral con criterio, identidad y futuro.</p>
+        <div class="actions">
+          <a class="button" href="#">Matricularme</a>
+          <a class="button secondary" href="#">Ver honorarios</a>
+          <a class="button secondary" href="#">Ultimas noticias</a>
+        </div>
+      </div>
+      <aside class="status-panel" aria-label="Informacion destacada">
+        <h2>Accesos profesionales</h2>
+        <div class="metric">
+          <strong>2026</strong>
+          <span>Agenda de capacitaciones y actividades institucionales.</span>
+        </div>
+        <div class="metric">
+          <strong>3 sedes</strong>
+          <span>Ushuaia, Rio Grande y Tolhuin como punto de encuentro provincial.</span>
+        </div>
+        <div class="metric">
+          <strong>Digital</strong>
+          <span>Encomienda, consultas y recursos para matriculados.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <section class="quick reveal" aria-label="Accesos rapidos">
+      <a href="#"><b>Matriculacion</b><span>Requisitos, documentacion y pasos para ejercer en la provincia.</span></a>
+      <a href="#"><b>Honorarios</b><span>Planilla sugerida y criterios para presupuestar servicios.</span></a>
+      <a href="#"><b>Encomienda Digital</b><span>Gestion profesional agil para obras y tramites.</span></a>
+      <a href="#"><b>Sedes CATDF</b><span>Horarios, telefonos y canales de atencion.</span></a>
+    </section>
+
+    <section class="reveal">
+      <div class="section-head">
+        <h2>Noticias destacadas</h2>
+        <p>Actualidad institucional, beneficios, encuentros y formacion para la matricula.</p>
+      </div>
+      <div class="news-grid">
+        <article class="feature-card">
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80" alt="Detalle de arquitectura moderna">
+          <div class="card-body">
+            <span class="tag">Institucional</span>
+            <h3>Asamblea General Ordinaria 2025</h3>
+            <p>Encuentro anual en Tolhuin para debatir, proyectar y fortalecer la participacion profesional de la matricula.</p>
+          </div>
+        </article>
+        <div class="news-stack">
+          <article class="stack-card">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80" alt="Materiales de acuarela sobre mesa">
+            <div class="card-body">
+              <span class="tag">Capacitacion</span>
+              <h3>Taller de Acuarelas en Sede Rio Grande</h3>
+              <p>Nueva actividad de representacion manual con cupos limitados.</p>
+            </div>
+          </article>
+          <article class="stack-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="Mesa de trabajo con planos y computadora">
+            <div class="card-body">
+              <span class="tag">Ejercicio profesional</span>
+              <h3>Nueva Planilla de Honorarios Sugeridos</h3>
+              <p>Herramienta actualizada para orientar el calculo profesional.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="agenda-contact reveal">
+      <div class="agenda">
+        <div class="section-head">
+          <h2>Agenda</h2>
+        </div>
+        <div class="agenda-row">
+          <div class="date">03 Jun</div>
+          <p><strong>Charla de eficiencia energetica</strong><br>Criterios bioclimaticos para proyectos en clima frio.</p>
+        </div>
+        <div class="agenda-row">
+          <div class="date">18 Jun</div>
+          <p><strong>Visita de obra</strong><br>Recorrido tecnico por equipamiento publico en Rio Grande.</p>
+        </div>
+        <div class="agenda-row">
+          <div class="date">01 Jul</div>
+          <p><strong>Dia del Arquitecto</strong><br>Actividades culturales y encuentro de matriculados.</p>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="section-head">
+          <h2>Contacto</h2>
+        </div>
+        <p><strong>Sede Ushuaia</strong><br>Yaganes 271 · +54 2901 414299<br>catdf.ush@catdf.org.ar</p>
+        <br>
+        <p><strong>Sede Rio Grande</strong><br>Ricardo Rojas 983 · +54 2964 614823<br>catdf.rg@catdf.org.ar</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <main>CATDF · Colegio de Arquitectos de Tierra del Fuego · Propuesta visual oscura</main>
+  </footer>
+</body>
+</html>
