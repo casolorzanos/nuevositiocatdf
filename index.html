@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CATDF - Propuesta Oscura</title>
+  <title>CATDF - Propuesta Clara</title>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0e171b;
-      --panel: #142126;
-      --panel-2: #1b2a30;
-      --text: #f4f1ea;
-      --muted: #a9b5b7;
-      --line: rgba(244, 241, 234, .14);
+      --bg: #ffffff;
+      --panel: #f5f7f9;
+      --panel-2: #e8edf0;
+      --text: #1a1a1a;
+      --muted: #5a6b72;
+      --line: rgba(0, 0, 0, .12);
       --accent: #ff3f2f;
       --accent-2: #d9271d;
-      --glow: rgba(255, 63, 47, .34);
+      --glow: rgba(255, 63, 47, .18);
       --warm: #ff7a45;
-      --green: #8bbf9f;
-      --shadow: 0 22px 70px rgba(0, 0, 0, .28);
+      --green: #2d7a5f;
+      --shadow: 0 22px 70px rgba(0, 0, 0, .08);
     }
 
     * { box-sizing: border-box; }
@@ -41,7 +41,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(14, 23, 27, .84);
+      background: rgba(255, 255, 255, .92);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
     }
@@ -150,8 +150,8 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 18% 28%, rgba(255, 63, 47, .24), transparent 32%),
-        linear-gradient(90deg, rgba(14, 23, 27, .98) 0%, rgba(14, 23, 27, .7) 48%, rgba(14, 23, 27, .32) 100%),
+        radial-gradient(circle at 18% 28%, rgba(255, 63, 47, .12), transparent 32%),
+        linear-gradient(90deg, rgba(255, 255, 255, .98) 0%, rgba(255, 255, 255, .85) 48%, rgba(255, 255, 255, .6) 100%),
         url("img/ushuaia.jpg") center/cover;
     }
 
@@ -160,8 +160,7 @@
       content: "";
       position: absolute;
       pointer-events: none;
-      border: 1px solid rgba(255, 63, 47, .28);
-      transform: rotate(45deg);
+      border: 1px solid rgba(255, 63, 47, .35);
       animation: drift 13s ease-in-out infinite;
     }
 
@@ -178,7 +177,7 @@
       right: 30vw;
       bottom: 16vh;
       animation-delay: -5s;
-      border-color: rgba(255, 122, 69, .26);
+      border-color: rgba(255, 122, 69, .35);
     }
 
     .hero-inner {
@@ -222,7 +221,7 @@
 
     .lead {
       max-width: 690px;
-      color: #d5ddde;
+      color: #4a5560;
       font-size: clamp(18px, 2vw, 22px);
       margin: 0 0 30px;
       animation: riseIn .76s .12s ease-out both;
@@ -236,7 +235,7 @@
     }
 
     .status-panel {
-      background: rgba(20, 33, 38, .86);
+      background: rgba(245, 247, 249, .92);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
       padding: 22px;
@@ -348,7 +347,7 @@
     .feature-card:hover, .stack-card:hover, .agenda:hover, .contact:hover {
       transform: translateY(-6px);
       border-color: rgba(255, 63, 47, .45);
-      box-shadow: 0 22px 54px rgba(0, 0, 0, .2), 0 0 0 1px rgba(255, 63, 47, .08);
+      box-shadow: 0 22px 54px rgba(0, 0, 0, .08), 0 0 0 1px rgba(255, 63, 47, .08);
     }
 
     .feature-card img {
@@ -467,20 +466,20 @@
 
     @keyframes drift {
       0%, 100% {
-        transform: translate3d(0, 0, 0) rotate(45deg);
+        transform: translate3d(0, 0, 0);
       }
       50% {
-        transform: translate3d(-18px, 22px, 0) rotate(50deg);
+        transform: translate3d(-18px, 22px, 0);
       }
     }
 
     @keyframes logoPulse {
       0%, 100% {
-        filter: drop-shadow(0 0 12px rgba(255, 63, 47, .34));
+        filter: drop-shadow(0 0 12px rgba(255, 63, 47, .18));
         transform: scale(1);
       }
       50% {
-        filter: drop-shadow(0 0 24px rgba(255, 63, 47, .58));
+        filter: drop-shadow(0 0 24px rgba(255, 63, 47, .28));
         transform: scale(1.035);
       }
     }
