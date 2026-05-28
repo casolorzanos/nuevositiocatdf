@@ -414,6 +414,61 @@
     }
 
     .agenda, .contact { padding: 28px; }
+    
+    .contact-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    
+    .form-group {
+      display: grid;
+      gap: 6px;
+    }
+    
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      background: white;
+      transition: border-color .22s ease, box-shadow .22s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 63, 47, .12);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    
+    .submit-btn {
+      margin-top: 8px;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+    }
 
     .agenda-row {
       display: grid;
@@ -501,6 +556,7 @@
       .section-head { display: block; }
       .stack-card { grid-template-columns: 1fr; }
       .stack-card img { width: 100%; height: 220px; }
+      .form-row { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 560px) {
@@ -628,12 +684,79 @@
         <p><strong>Sede Ushuaia</strong><br>Yaganes 271 · +54 2901 414299<br>catdf.ush@catdf.org.ar</p>
         <br>
         <p><strong>Sede Rio Grande</strong><br>Ricardo Rojas 983 · +54 2964 614823<br>catdf.rg@catdf.org.ar</p>
+        <br>
+        <p><strong>Sede Tolhuin</strong><br>Centro Cultural · +54 2901 496210<br>catdf.tol@catdf.org.ar</p>
+        
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre y Apellido</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+54 9 ...">
+            </div>
+            <div class="form-group">
+              <label for="asunto">Asunto</label>
+              <select id="asunto" name="asunto" required>
+                <option value="">Seleccioná un tema</option>
+                <option value="matriculacion">Matriculación</option>
+                <option value="honorarios">Honorarios</option>
+                <option value="capacitacion">Capacitación</option>
+                <option value="encomienda">Encomienda Digital</option>
+                <option value="institucional">Consulta Institucional</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta..." required></textarea>
+          </div>
+          <button type="submit" class="button submit-btn">Enviar Consulta</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <main>CATDF · Colegio de Arquitectos de Tierra del Fuego · Propuesta visual oscura</main>
+    <main>CATDF · Colegio de Arquitectos de Tierra del Fuego · Propuesta visual clara</main>
   </footer>
+
+  <script>
+    // Manejo del envío del formulario (demo)
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Aquí iría la lógica para enviar los datos a un servidor
+      // Por ahora, mostramos un mensaje de confirmación
+      alert('¡Gracias por tu consulta! Nos pondremos en contacto a la brevedad.');
+      this.reset();
+    });
+
+    // Scroll suave para los enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
