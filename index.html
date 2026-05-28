@@ -959,90 +959,102 @@
 
   <script>
     // Slider de fondo automático para el hero
-    const heroBgSlider = document.getElementById('heroBgSlider');
-    const bgImages = heroBgSlider.querySelectorAll('.hero-bg');
-    const heroBgDots = document.getElementById('heroBgDots');
-    const prevBgBtn = document.getElementById('prevBgBtn');
-    const nextBgBtn = document.getElementById('nextBgBtn');
-    let currentBgIndex = 0;
-    const slideInterval = 5000; // Cambia cada 5 segundos
-    let autoSlideTimer;
-
-    // Crear los puntos indicadores
-    function createDots() {
-      bgImages.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('hero-bg-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        heroBgDots.appendChild(dot);
-      });
-    }
-
-    // Actualizar los puntos indicadores
-    function updateDots() {
-      const dots = heroBgDots.querySelectorAll('.hero-bg-dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentBgIndex);
-      });
-    }
-
-    // Mostrar una imagen específica
-    function showBackground(index) {
-      // Ocultar la imagen actual
-      bgImages[currentBgIndex].classList.remove('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroBgSlider = document.getElementById('heroBgSlider');
+      if (!heroBgSlider) return;
       
-      // Mostrar la nueva imagen
-      bgImages[index].classList.add('active');
-      currentBgIndex = index;
+      const bgImages = heroBgSlider.querySelectorAll('.hero-bg');
+      if (bgImages.length === 0) return;
       
-      // Actualizar los puntos
-      updateDots();
-    }
+      const heroBgDots = document.getElementById('heroBgDots');
+      const prevBgBtn = document.getElementById('prevBgBtn');
+      const nextBgBtn = document.getElementById('nextBgBtn');
+      let currentBgIndex = 0;
+      const slideInterval = 5000; // Cambia cada 5 segundos
+      let autoSlideTimer;
 
-    // Ir a un slide específico
-    function goToSlide(index) {
-      showBackground(index);
-      resetAutoSlide();
-    }
+      // Crear los puntos indicadores
+      function createDots() {
+        bgImages.forEach((_, index) => {
+          const dot = document.createElement('div');
+          dot.classList.add('hero-bg-dot');
+          if (index === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(index));
+          heroBgDots.appendChild(dot);
+        });
+      }
 
-    // Mostrar la siguiente imagen
-    function showNextBackground() {
-      const nextIndex = (currentBgIndex + 1) % bgImages.length;
-      showBackground(nextIndex);
-    }
+      // Actualizar los puntos indicadores
+      function updateDots() {
+        const dots = heroBgDots.querySelectorAll('.hero-bg-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentBgIndex);
+        });
+      }
 
-    // Mostrar la imagen anterior
-    function showPrevBackground() {
-      const prevIndex = (currentBgIndex - 1 + bgImages.length) % bgImages.length;
-      showBackground(prevIndex);
-    }
+      // Mostrar una imagen específica
+      function showBackground(index) {
+        // Ocultar la imagen actual
+        bgImages[currentBgIndex].classList.remove('active');
+        
+        // Mostrar la nueva imagen
+        bgImages[index].classList.add('active');
+        currentBgIndex = index;
+        
+        // Actualizar los puntos
+        updateDots();
+      }
 
-    // Iniciar el slider automático
-    function startAutoSlide() {
-      autoSlideTimer = setInterval(showNextBackground, slideInterval);
-    }
+      // Ir a un slide específico
+      function goToSlide(index) {
+        showBackground(index);
+        resetAutoSlide();
+      }
 
-    // Reiniciar el timer automático
-    function resetAutoSlide() {
-      clearInterval(autoSlideTimer);
-      startAutoSlide();
-    }
+      // Mostrar la siguiente imagen
+      function showNextBackground() {
+        const nextIndex = (currentBgIndex + 1) % bgImages.length;
+        showBackground(nextIndex);
+      }
 
-    // Event listeners para los botones
-    prevBgBtn.addEventListener('click', () => {
-      showPrevBackground();
-      resetAutoSlide();
+      // Mostrar la imagen anterior
+      function showPrevBackground() {
+        const prevIndex = (currentBgIndex - 1 + bgImages.length) % bgImages.length;
+        showBackground(prevIndex);
+      }
+
+      // Iniciar el slider automático
+      function startAutoSlide() {
+        autoSlideTimer = setInterval(showNextBackground, slideInterval);
+      }
+
+      // Reiniciar el timer automático
+      function resetAutoSlide() {
+        clearInterval(autoSlideTimer);
+        startAutoSlide();
+      }
+
+      // Event listeners para los botones
+      if (prevBgBtn) {
+        prevBgBtn.addEventListener('click', () => {
+          showPrevBackground();
+          resetAutoSlide();
+        });
+      }
+
+      if (nextBgBtn) {
+        nextBgBtn.addEventListener('click', () => {
+          showNextBackground();
+          resetAutoSlide();
+        });
+      }
+
+      // Inicializar
+      createDots();
+      
+      // Iniciar con un pequeño retraso para asegurar transición suave
+      setTimeout(startAutoSlide, 1000);
     });
-
-    nextBgBtn.addEventListener('click', () => {
-      showNextBackground();
-      resetAutoSlide();
-    });
-
-    // Inicializar
-    createDots();
-    startAutoSlide();
 
     // Manejo del envío del formulario (demo)
     document.querySelector('.contact-form').addEventListener('submit', function(e) {
