@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Institucional — CATDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="mark" src="assets/A-logo.png" alt="CATDF">
+        <div class="brand-text">
+          <span class="brand-name">CATDF</span>
+          <span class="brand-full">Colegio de Arquitectos<br>de Tierra del Fuego</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="institucional.html" class="active">Institucional</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html">Honorarios</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="profesionales.html">Profesionales</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <a class="button" href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">&times;</button>
+    <a href="index.html" onclick="closeMobile()">Inicio</a>
+    <a href="institucional.html" onclick="closeMobile()">Institucional</a>
+    <a href="matriculacion.html" onclick="closeMobile()">Matriculación</a>
+    <a href="honorarios.html" onclick="closeMobile()">Honorarios</a>
+    <a href="noticias.html" onclick="closeMobile()">Noticias</a>
+    <a href="profesionales.html" onclick="closeMobile()">Profesionales</a>
+    <a href="index.html#contacto" onclick="closeMobile()">Contacto</a>
+  </div>
+
+  <div class="page-hero">
+    <span class="eyebrow">Sobre nosotros</span>
+    <h1>Institucional</h1>
+    <p>El Colegio de Arquitectos de Tierra del Fuego representa, regula y acompaña a los profesionales de la arquitectura en el ejercicio ético y responsable de la profesión en el extremo austral de Argentina.</p>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Inicio</a><span>/</span><span>Institucional</span>
+  </nav>
+
+  <main>
+    <!-- MISIÓN -->
+    <section class="content-section reveal">
+      <div class="two-col">
+        <div class="content-text">
+          <span class="eyebrow">Nuestra razón de ser</span>
+          <h2>Misión y visión institucional</h2>
+          <p>El CATDF es el organismo público no estatal que regula el ejercicio de la arquitectura en la Provincia de Tierra del Fuego, Antártida e Islas del Atlántico Sur. Fue creado para representar y defender los intereses de los arquitectos matriculados, garantizando estándares de calidad, ética y responsabilidad profesional.</p>
+          <p>Nuestra visión es ser el referente provincial en el desarrollo sustentable del territorio fueguino, promoviendo la calidad arquitectónica como herramienta fundamental para el bienestar de sus habitantes.</p>
+          <a class="button" href="matriculacion.html">Matricularse</a>
+        </div>
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" alt="Edificio institucional">
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="content-section reveal">
+      <div class="section-head" style="margin-bottom:0">
+        <div>
+          <span class="eyebrow">Pilares</span>
+          <h2>Nuestros valores</h2>
+        </div>
+      </div>
+      <div class="cards-grid" style="margin-top:32px">
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          </div>
+          <h3>Ética profesional</h3>
+          <p>Promovemos el ejercicio honesto, responsable y transparente de la profesión en todas las actuaciones.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <h3>Comunidad</h3>
+          <p>Fomentamos la solidaridad y colaboración entre los matriculados a través de actividades y espacios compartidos.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-5.82L21 9 12 3zm6 14H6v-4.64l6 3.27 6-3.27V17zm-6-3.86L3.74 9 12 4.86 20.26 9 12 13.14z"/></svg>
+          </div>
+          <h3>Formación continua</h3>
+          <p>Impulsamos la actualización profesional mediante talleres, jornadas y congresos de nivel regional e internacional.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M15 8.5c0 .83-.34 1.58-.88 2.12l-5.82 5.82A3 3 0 0 1 6 17.5c-1.66 0-3-1.34-3-3 0-.83.34-1.58.88-2.12L9.7 6.56A3 3 0 0 1 12 5.5c1.66 0 3 1.34 3 3z"/><path d="M18 14.5c0 .83-.34 1.58-.88 2.12l-2.94 2.94A3 3 0 0 1 12 20.5c-1.66 0-3-1.34-3-3"/></svg>
+          </div>
+          <h3>Sustentabilidad</h3>
+          <p>Abordamos el territorio austral con criterio bioclimático, patrimonial e identitario para proyectar el futuro.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+          </div>
+          <h3>Regulación</h3>
+          <p>Garantizamos el ejercicio legal y habilitado de la arquitectura protegiendo a comitentes y al público en general.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <h3>Representación</h3>
+          <p>Defendemos los intereses de la matrícula ante organismos públicos, privados y entidades de nivel nacional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTORIDADES -->
+    <section class="content-section reveal">
+      <div class="two-col reverse">
+        <div class="content-text">
+          <span class="eyebrow">Gobierno colegiado</span>
+          <h2>Consejo Directivo 2025–2026</h2>
+          <p>El CATDF es gobernado por un Consejo Directivo elegido democráticamente por la matrícula, con representantes de las tres sedes provinciales: Ushuaia, Río Grande y Tolhuin.</p>
+          <p>El Consejo Directivo gestiona los recursos institucionales, representa al Colegio ante terceros y establece las políticas de ejercicio profesional en la provincia.</p>
+          <a class="button secondary" href="index.html#contacto">Contactar al Colegio</a>
+        </div>
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80" alt="Reunión del Consejo Directivo">
+        </div>
+      </div>
+    </section>
+
+    <!-- NORMATIVA -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Marco legal</span>
+          <h2>Normativa y código de ética</h2>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80" alt="Código de ética y normativa">
+        </div>
+        <div class="content-text">
+          <p>El ejercicio de la arquitectura en la Provincia de Tierra del Fuego está regulado por la Ley de Ejercicio Profesional y el Código de Ética del CATDF, instrumentos que garantizan la idoneidad y responsabilidad de los profesionales matriculados.</p>
+          <p>El Código de Ética establece los principios y deberes de los arquitectos hacia sus comitentes, colegas y la sociedad en general, incluyendo la honestidad en los presupuestos, la calidad técnica de los proyectos y el respeto por el ambiente construido y natural.</p>
+          <a class="button secondary" href="matriculacion.html">Ver requisitos de matrícula</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEDES -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Presencia provincial</span>
+          <h2>Nuestras tres sedes</h2>
+        </div>
+      </div>
+      <div class="cards-grid" style="margin-top:0">
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3>Sede Ushuaia</h3>
+          <p>Yaganes 271<br>+54 2901 414299<br><a href="mailto:catdf.ush@catdf.org.ar" style="color:var(--accent)">catdf.ush@catdf.org.ar</a></p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3>Sede Río Grande</h3>
+          <p>Ricardo Rojas 983<br>+54 2964 614823<br><a href="mailto:catdf.rg@catdf.org.ar" style="color:var(--accent)">catdf.rg@catdf.org.ar</a></p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3>Sede Tolhuin</h3>
+          <p>Centro Cultural<br>+54 2901 496210<br><a href="mailto:catdf.tol@catdf.org.ar" style="color:var(--accent)">catdf.tol@catdf.org.ar</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/A-logo.png" alt="CATDF" class="footer-logo">
+        <div><strong>CATDF</strong><p>Colegio de Arquitectos<br>de Tierra del Fuego</p></div>
+      </div>
+      <div class="footer-links">
+        <h4>Institución</h4>
+        <a href="institucional.html">Misión y autoridades</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html">Honorarios sugeridos</a>
+        <a href="profesionales.html">Directorio profesional</a>
+      </div>
+      <div class="footer-links">
+        <h4>Servicios</h4>
+        <a href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <div class="footer-links">
+        <h4>Sedes</h4>
+        <p>Ushuaia · Yaganes 271</p>
+        <p>Río Grande · Ricardo Rojas 983</p>
+        <p>Tolhuin · Centro Cultural</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CATDF — Colegio de Arquitectos de Tierra del Fuego</p>
+      <p>Propuesta de diseño web</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

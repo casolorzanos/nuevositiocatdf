@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matriculación — CATDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="mark" src="assets/A-logo.png" alt="CATDF">
+        <div class="brand-text">
+          <span class="brand-name">CATDF</span>
+          <span class="brand-full">Colegio de Arquitectos<br>de Tierra del Fuego</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="institucional.html">Institucional</a>
+        <a href="matriculacion.html" class="active">Matriculación</a>
+        <a href="honorarios.html">Honorarios</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="profesionales.html">Profesionales</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <a class="button" href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">&times;</button>
+    <a href="index.html" onclick="closeMobile()">Inicio</a>
+    <a href="institucional.html" onclick="closeMobile()">Institucional</a>
+    <a href="matriculacion.html" onclick="closeMobile()">Matriculación</a>
+    <a href="honorarios.html" onclick="closeMobile()">Honorarios</a>
+    <a href="noticias.html" onclick="closeMobile()">Noticias</a>
+    <a href="profesionales.html" onclick="closeMobile()">Profesionales</a>
+    <a href="index.html#contacto" onclick="closeMobile()">Contacto</a>
+  </div>
+
+  <div class="page-hero">
+    <span class="eyebrow">Ejercicio profesional</span>
+    <h1>Matriculación</h1>
+    <p>Requisitos, documentación y procedimiento para obtener la matrícula profesional y ejercer la arquitectura legalmente en Tierra del Fuego.</p>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Inicio</a><span>/</span><span>Matriculación</span>
+  </nav>
+
+  <main>
+    <!-- REQUISITOS -->
+    <section class="content-section reveal">
+      <div class="two-col">
+        <div class="content-text">
+          <span class="eyebrow">Primer paso</span>
+          <h2>Documentación necesaria</h2>
+          <p>Para iniciar el trámite de matriculación debés presentar la siguiente documentación en cualquiera de nuestras sedes:</p>
+          <ul style="list-style:none;display:grid;gap:12px;margin-top:16px;margin-bottom:28px">
+            <li style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:22px;height:22px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span style="font-size:14.5px;color:var(--muted)">Título universitario habilitante (original y fotocopia certificada)</span>
+            </li>
+            <li style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:22px;height:22px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span style="font-size:14.5px;color:var(--muted)">DNI (original y fotocopia)</span>
+            </li>
+            <li style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:22px;height:22px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span style="font-size:14.5px;color:var(--muted)">Certificado de antecedentes penales (no mayor a 90 días)</span>
+            </li>
+            <li style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:22px;height:22px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span style="font-size:14.5px;color:var(--muted)">Curriculum vitae</span>
+            </li>
+            <li style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:22px;height:22px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span style="font-size:14.5px;color:var(--muted)">Dos fotografías 4×4 (fondo blanco)</span>
+            </li>
+            <li style="display:flex;gap:12px;align-items:flex-start">
+              <span style="width:22px;height:22px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </span>
+              <span style="font-size:14.5px;color:var(--muted)">Comprobante de pago de la tasa de matriculación</span>
+            </li>
+          </ul>
+          <a class="button" href="index.html#contacto">Consultar por mi trámite</a>
+        </div>
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Documentación y trámites">
+        </div>
+      </div>
+    </section>
+
+    <!-- PASOS -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Proceso</span>
+          <h2>Pasos para matricularse</h2>
+        </div>
+      </div>
+      <div class="cards-grid" style="margin-top:0">
+        <div class="info-card" style="border-top:3px solid var(--accent)">
+          <div style="font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px">01</div>
+          <h3>Reuní la documentación</h3>
+          <p>Recopilá todos los documentos requeridos. Asegurate de que el certificado de antecedentes penales no supere los 90 días de emitido.</p>
+        </div>
+        <div class="info-card" style="border-top:3px solid var(--accent)">
+          <div style="font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px">02</div>
+          <h3>Presentación presencial</h3>
+          <p>Acercate a cualquiera de nuestras tres sedes (Ushuaia, Río Grande o Tolhuin) con la documentación completa.</p>
+        </div>
+        <div class="info-card" style="border-top:3px solid var(--accent)">
+          <div style="font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px">03</div>
+          <h3>Pago de la tasa</h3>
+          <p>Abonás la tasa de matriculación correspondiente. Consultá el valor actualizado en la sede más cercana.</p>
+        </div>
+        <div class="info-card" style="border-top:3px solid var(--accent)">
+          <div style="font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px">04</div>
+          <h3>Resolución</h3>
+          <p>El Consejo Directivo resuelve la solicitud. La matrícula se emite en un plazo de 30 días hábiles.</p>
+        </div>
+        <div class="info-card" style="border-top:3px solid var(--accent)">
+          <div style="font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px">05</div>
+          <h3>Entrega de credencial</h3>
+          <p>Recibís tu credencial de arquitecto matriculado y quedás habilitado para ejercer en toda la provincia.</p>
+        </div>
+        <div class="info-card" style="border-top:3px solid var(--accent)">
+          <div style="font-size:32px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:16px">06</div>
+          <h3>Acceso a autogestión</h3>
+          <p>Te activamos el acceso al portal de autogestión para gestionar encomiendas y trámites digitalmente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="content-section reveal">
+      <div class="two-col reverse">
+        <div class="content-text">
+          <span class="eyebrow">¿Por qué matricularse?</span>
+          <h2>Beneficios de la matrícula</h2>
+          <p>Estar matriculado en el CATDF no solo te habilita legalmente para ejercer la profesión, sino que te abre las puertas a una serie de beneficios concretos pensados para tu desarrollo profesional.</p>
+          <div style="display:grid;gap:14px;margin-top:20px;margin-bottom:28px">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;background:var(--accent-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+              </div>
+              <div><strong style="display:block;font-size:14px;margin-bottom:3px">Encomienda Digital</strong><span style="font-size:13.5px;color:var(--muted)">Gestión ágil de obras y trámites en línea a través del portal de autogestión.</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;background:var(--accent-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 3L1 9l4 2.18V17c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-5.82L21 9 12 3zm6 14H6v-4.64l6 3.27 6-3.27V17zm-6-3.86L3.74 9 12 4.86 20.26 9 12 13.14z"/></svg>
+              </div>
+              <div><strong style="display:block;font-size:14px;margin-bottom:3px">Capacitación gratuita</strong><span style="font-size:13.5px;color:var(--muted)">Acceso a talleres, jornadas y congresos organizados por el Colegio.</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;background:var(--accent-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              </div>
+              <div><strong style="display:block;font-size:14px;margin-bottom:3px">Seguro de responsabilidad civil</strong><span style="font-size:13.5px;color:var(--muted)">Cobertura profesional para proteger tu práctica ante eventuales reclamos.</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;background:var(--accent-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              </div>
+              <div><strong style="display:block;font-size:14px;margin-bottom:3px">Representación institucional</strong><span style="font-size:13.5px;color:var(--muted)">El Colegio defiende tus intereses ante el Estado provincial y organismos nacionales.</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:40px;height:40px;background:var(--accent-light);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+              </div>
+              <div><strong style="display:block;font-size:14px;margin-bottom:3px">Descuentos exclusivos</strong><span style="font-size:13.5px;color:var(--muted)">Acuerdos con empresas del sector como Amoblamientos W y otros proveedores.</span></div>
+            </div>
+          </div>
+          <a class="button" href="index.html#contacto">Iniciar mi trámite</a>
+        </div>
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80" alt="Beneficios profesionales">
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOGESTION CTA -->
+    <section class="content-section reveal" style="border-bottom:none">
+      <div class="congreso-banner" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">
+        <div class="congreso-content">
+          <span class="eyebrow">¿Ya sos matriculado?</span>
+          <h2>Accedé a la Autogestión Digital</h2>
+          <p>El portal de autogestión te permite gestionar encomiendas, consultar tu estado de cuenta y realizar trámites sin moverte de tu estudio.</p>
+          <div class="congreso-meta">
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+              <span>Encomiendas en línea</span>
+            </div>
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+              <span>Consulta de matrícula</span>
+            </div>
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+              <span>Gestión de trámites</span>
+            </div>
+          </div>
+          <a class="button ghost" href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Ir a Autogestión →</a>
+        </div>
+        <div class="congreso-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab82f77e5?auto=format&fit=crop&w=900&q=80" alt="Portal digital">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/A-logo.png" alt="CATDF" class="footer-logo">
+        <div><strong>CATDF</strong><p>Colegio de Arquitectos<br>de Tierra del Fuego</p></div>
+      </div>
+      <div class="footer-links">
+        <h4>Institución</h4>
+        <a href="institucional.html">Misión y autoridades</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html">Honorarios sugeridos</a>
+        <a href="profesionales.html">Directorio profesional</a>
+      </div>
+      <div class="footer-links">
+        <h4>Servicios</h4>
+        <a href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <div class="footer-links">
+        <h4>Sedes</h4>
+        <p>Ushuaia · Yaganes 271</p>
+        <p>Río Grande · Ricardo Rojas 983</p>
+        <p>Tolhuin · Centro Cultural</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CATDF — Colegio de Arquitectos de Tierra del Fuego</p>
+      <p>Propuesta de diseño web</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

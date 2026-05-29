@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noticias — CATDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="mark" src="assets/A-logo.png" alt="CATDF">
+        <div class="brand-text">
+          <span class="brand-name">CATDF</span>
+          <span class="brand-full">Colegio de Arquitectos<br>de Tierra del Fuego</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="institucional.html">Institucional</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html">Honorarios</a>
+        <a href="noticias.html" class="active">Noticias</a>
+        <a href="profesionales.html">Profesionales</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <a class="button" href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">&times;</button>
+    <a href="index.html" onclick="closeMobile()">Inicio</a>
+    <a href="institucional.html" onclick="closeMobile()">Institucional</a>
+    <a href="matriculacion.html" onclick="closeMobile()">Matriculación</a>
+    <a href="honorarios.html" onclick="closeMobile()">Honorarios</a>
+    <a href="noticias.html" onclick="closeMobile()">Noticias</a>
+    <a href="profesionales.html" onclick="closeMobile()">Profesionales</a>
+    <a href="index.html#contacto" onclick="closeMobile()">Contacto</a>
+  </div>
+
+  <div class="page-hero">
+    <span class="eyebrow">Actualidad institucional</span>
+    <h1>Noticias y Novedades</h1>
+    <p>Enterate de las últimas novedades, eventos, capacitaciones y beneficios para los arquitectos matriculados en Tierra del Fuego.</p>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Inicio</a><span>/</span><span>Noticias</span>
+  </nav>
+
+  <main>
+
+    <!-- NOTICIA DESTACADA: XII CONGRESO -->
+    <section class="content-section reveal">
+      <div class="congreso-banner" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">
+        <div class="congreso-content">
+          <span class="eyebrow" style="color:rgba(255,150,130,.9)">Evento destacado · 2026</span>
+          <h2 style="color:#fff">XII Congreso Binacional<br>de Arquitectos de Patagonia</h2>
+          <p style="color:rgba(255,255,255,.65);font-style:italic">"Memorias del sur e identidades del presente:<br>construcciones para un territorio vivo"</p>
+          <div class="congreso-meta">
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              <span>13 al 16 de octubre de 2026</span>
+            </div>
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>Hotel Arakur, Ushuaia, Tierra del Fuego</span>
+            </div>
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>Envío de abstracts: hasta el 30 de junio de 2026</span>
+            </div>
+            <div class="meta-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+              <span>Presentaciones de máximo 20 minutos</span>
+            </div>
+          </div>
+          <a class="button ghost" href="mailto:12conarqpatagonia@gmail.com">Enviar abstract →</a>
+        </div>
+        <div class="congreso-img">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80" alt="XII Congreso Binacional">
+        </div>
+      </div>
+
+      <!-- Áreas temáticas -->
+      <div style="margin-top:32px">
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">Áreas temáticas del Congreso</h3>
+        <div class="cards-grid" style="margin-top:0">
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3>Innovación situada</h3>
+            <p>Conocimientos y materiales regionales. Técnicas constructivas propias del territorio patagónico austral.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </div>
+            <h3>Ética de la infraestructura</h3>
+            <p>Habitación y territorio. Reflexiones sobre la responsabilidad del arquitecto en contextos extremos.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h3>Gestión multiescala</h3>
+            <p>Territorios inteligentes y movilidad urbana. Ciudad, región y conectividad en el extremo sur.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            <h3>Memoria y patrimonio</h3>
+            <p>Conservación del patrimonio construido fueguino. Identidad, historia y proyección hacia el futuro.</p>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:20px 24px;background:var(--panel);border-radius:var(--radius);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <div style="flex:1;min-width:200px">
+            <strong style="font-size:14px">Contacto del Congreso</strong>
+            <p style="font-size:13.5px;color:var(--muted);margin-top:4px">Para envío de abstracts y consultas: <a href="mailto:12conarqpatagonia@gmail.com" style="color:var(--accent);font-weight:600">12conarqpatagonia@gmail.com</a></p>
+          </div>
+          <a class="button" href="mailto:12conarqpatagonia@gmail.com">Enviar abstract</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTICIAS GRID -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Últimas novedades</span>
+          <h2>Noticias institucionales</h2>
+        </div>
+      </div>
+      <div class="news-grid">
+        <article class="feature-card">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" alt="Amoblamientos W">
+            <span class="card-badge">Beneficio</span>
+          </div>
+          <div class="card-body">
+            <span class="tag">Acuerdo institucional</span>
+            <h3>Descuentos exclusivos en Amoblamientos W</h3>
+            <p>El CATDF firmó un acuerdo de asociación con Amoblamientos W que beneficia a todos los arquitectos matriculados con descuentos exclusivos en la compra de mobiliario.</p>
+            <ul style="list-style:none;margin-top:14px;display:grid;gap:8px">
+              <li style="display:flex;align-items:center;gap:8px;font-size:14px">
+                <span style="width:20px;height:20px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </span>
+                <span><strong>20% de descuento</strong> con pago en efectivo o transferencia</span>
+              </li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:14px">
+                <span style="width:20px;height:20px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </span>
+                <span><strong>5% de descuento</strong> con tarjeta de crédito en cuotas</span>
+              </li>
+            </ul>
+            <p style="margin-top:14px;font-size:13px;color:var(--muted)">Presentá tu credencial de matriculado vigente al momento de la compra.</p>
+          </div>
+        </article>
+
+        <div class="news-stack">
+          <article class="stack-card">
+            <div class="stack-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80" alt="Taller de acuarelas">
+            </div>
+            <div class="card-body">
+              <span class="tag">Capacitación</span>
+              <h3>Taller de Acuarelas — Sede Río Grande</h3>
+              <p>Nueva actividad de representación manual con cupos limitados. Técnica de acuarela aplicada a la representación arquitectónica.</p>
+            </div>
+          </article>
+          <article class="stack-card">
+            <div class="stack-img-wrap">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="Planilla honorarios">
+            </div>
+            <div class="card-body">
+              <span class="tag">Ejercicio profesional</span>
+              <h3>Nueva Planilla de Honorarios Sugeridos</h3>
+              <p>Actualización de la planilla de honorarios mínimos sugeridos. Disponible para descarga en la sección correspondiente.</p>
+              <a href="honorarios.html" class="card-link">Ver planilla →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÁS NOTICIAS -->
+    <section class="content-section reveal" style="border-bottom:none">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Archivo</span>
+          <h2>Más noticias</h2>
+        </div>
+      </div>
+      <div style="display:grid;gap:1px;background:var(--line);border:1.5px solid var(--line);border-radius:var(--radius);overflow:hidden">
+        <div style="background:#fff;display:grid;grid-template-columns:160px 1fr auto;gap:24px;padding:22px 24px;align-items:center;transition:background .2s" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='#fff'">
+          <div style="overflow:hidden;border-radius:8px;height:90px"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=300&q=80" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div>
+            <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--warm)">Institucional</span>
+            <h4 style="font-size:16px;font-weight:700;margin:6px 0 6px">Asamblea General Ordinaria 2025</h4>
+            <p style="font-size:13px;color:var(--muted)">Encuentro anual en Tolhuin para debatir, proyectar y fortalecer la participación profesional de la matrícula.</p>
+          </div>
+          <span style="font-size:12px;color:var(--muted);white-space:nowrap">Dic 2025</span>
+        </div>
+        <div style="background:#fff;display:grid;grid-template-columns:160px 1fr auto;gap:24px;padding:22px 24px;align-items:center;transition:background .2s" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='#fff'">
+          <div style="overflow:hidden;border-radius:8px;height:90px"><img src="https://images.unsplash.com/photo-1460925895917-afdab82f77e5?auto=format&fit=crop&w=300&q=80" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div>
+            <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--warm)">Charla</span>
+            <h4 style="font-size:16px;font-weight:700;margin:6px 0 6px">Eficiencia energética en clima frío</h4>
+            <p style="font-size:13px;color:var(--muted)">Criterios bioclimáticos para proyectos en la Patagonia austral. Materiales, orientación y estrategias pasivas.</p>
+          </div>
+          <span style="font-size:12px;color:var(--muted);white-space:nowrap">Jun 2025</span>
+        </div>
+        <div style="background:#fff;display:grid;grid-template-columns:160px 1fr auto;gap:24px;padding:22px 24px;align-items:center;transition:background .2s" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='#fff'">
+          <div style="overflow:hidden;border-radius:8px;height:90px"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div>
+            <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--warm)">Visita técnica</span>
+            <h4 style="font-size:16px;font-weight:700;margin:6px 0 6px">Recorrido por equipamiento público en Río Grande</h4>
+            <p style="font-size:13px;color:var(--muted)">Visita de obra a equipamiento público de nueva construcción en la capital norteña de la provincia.</p>
+          </div>
+          <span style="font-size:12px;color:var(--muted);white-space:nowrap">May 2025</span>
+        </div>
+        <div style="background:#fff;display:grid;grid-template-columns:160px 1fr auto;gap:24px;padding:22px 24px;align-items:center;transition:background .2s" onmouseover="this.style.background='var(--panel)'" onmouseout="this.style.background='#fff'">
+          <div style="overflow:hidden;border-radius:8px;height:90px"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=300&q=80" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+          <div>
+            <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--warm)">Muestra</span>
+            <h4 style="font-size:16px;font-weight:700;margin:6px 0 6px">Presentación anual de obras destacadas</h4>
+            <p style="font-size:13px;color:var(--muted)">Muestra anual de obras proyectadas y ejecutadas por arquitectos matriculados en la provincia durante el año.</p>
+          </div>
+          <span style="font-size:12px;color:var(--muted);white-space:nowrap">Abr 2025</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/A-logo.png" alt="CATDF" class="footer-logo">
+        <div><strong>CATDF</strong><p>Colegio de Arquitectos<br>de Tierra del Fuego</p></div>
+      </div>
+      <div class="footer-links">
+        <h4>Institución</h4>
+        <a href="institucional.html">Misión y autoridades</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html">Honorarios sugeridos</a>
+        <a href="profesionales.html">Directorio profesional</a>
+      </div>
+      <div class="footer-links">
+        <h4>Servicios</h4>
+        <a href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <div class="footer-links">
+        <h4>Sedes</h4>
+        <p>Ushuaia · Yaganes 271</p>
+        <p>Río Grande · Ricardo Rojas 983</p>
+        <p>Tolhuin · Centro Cultural</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CATDF — Colegio de Arquitectos de Tierra del Fuego</p>
+      <p>Propuesta de diseño web</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

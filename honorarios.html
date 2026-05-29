@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Honorarios Sugeridos — CATDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img class="mark" src="assets/A-logo.png" alt="CATDF">
+        <div class="brand-text">
+          <span class="brand-name">CATDF</span>
+          <span class="brand-full">Colegio de Arquitectos<br>de Tierra del Fuego</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="institucional.html">Institucional</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html" class="active">Honorarios</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="profesionales.html">Profesionales</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <a class="button" href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">&times;</button>
+    <a href="index.html" onclick="closeMobile()">Inicio</a>
+    <a href="institucional.html" onclick="closeMobile()">Institucional</a>
+    <a href="matriculacion.html" onclick="closeMobile()">Matriculación</a>
+    <a href="honorarios.html" onclick="closeMobile()">Honorarios</a>
+    <a href="noticias.html" onclick="closeMobile()">Noticias</a>
+    <a href="profesionales.html" onclick="closeMobile()">Profesionales</a>
+    <a href="index.html#contacto" onclick="closeMobile()">Contacto</a>
+  </div>
+
+  <div class="page-hero">
+    <span class="eyebrow">Ejercicio profesional</span>
+    <h1>Honorarios Sugeridos</h1>
+    <p>Planilla actualizada de honorarios mínimos sugeridos para servicios profesionales de arquitectura en la Provincia de Tierra del Fuego. Resolución N° 904/24.</p>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Inicio</a><span>/</span><span>Honorarios</span>
+  </nav>
+
+  <main>
+
+    <!-- INTRO -->
+    <section class="content-section reveal">
+      <div class="two-col">
+        <div class="content-text">
+          <span class="eyebrow">¿Qué son los honorarios sugeridos?</span>
+          <h2>Arancel profesional mínimo</h2>
+          <p>Los honorarios sugeridos son los valores mínimos recomendados por el CATDF para los distintos tipos de servicios profesionales de arquitectura. No son obligatorios, pero orientan a los arquitectos en la elaboración de presupuestos justos y transparentes.</p>
+          <p>La planilla se actualiza periódicamente conforme a la variación del costo de la construcción y la inflación, garantizando que los valores reflejen la realidad económica del mercado fueguino.</p>
+          <p>Para acceder a las planillas históricas en formato PDF, visitá la sección oficial del CATDF.</p>
+          <a class="button" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Descargar planillas oficiales
+          </a>
+        </div>
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80" alt="Planilla de honorarios">
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLA DE SERVICIOS -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Referencia orientativa</span>
+          <h2>Tipos de servicios profesionales</h2>
+        </div>
+      </div>
+      <div style="overflow-x:auto;border-radius:var(--radius);border:1.5px solid var(--line);margin-top:0">
+        <table class="hon-table">
+          <thead>
+            <tr>
+              <th>Tipo de servicio</th>
+              <th>Descripción</th>
+              <th>Criterio de cálculo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anteproyecto</td>
+              <td>Desarrollo conceptual de la propuesta arquitectónica</td>
+              <td>% del costo de obra</td>
+            </tr>
+            <tr>
+              <td>Proyecto ejecutivo</td>
+              <td>Documentación técnica completa para la ejecución de obra</td>
+              <td>% del costo de obra</td>
+            </tr>
+            <tr>
+              <td>Dirección de obra</td>
+              <td>Supervisión técnica durante la ejecución del proyecto</td>
+              <td>% del costo de obra</td>
+            </tr>
+            <tr>
+              <td>Asesoramiento</td>
+              <td>Consultoría técnica, informes y dictámenes profesionales</td>
+              <td>Por hora profesional</td>
+            </tr>
+            <tr>
+              <td>Relevamiento</td>
+              <td>Medición y documentación de edificios existentes</td>
+              <td>Por m² relevado</td>
+            </tr>
+            <tr>
+              <td>Diseño de interiores</td>
+              <td>Planificación y diseño de espacios interiores</td>
+              <td>% del costo o por m²</td>
+            </tr>
+            <tr>
+              <td>Certificaciones</td>
+              <td>Visados, certificados y legalizaciones</td>
+              <td>Valor fijo por acto</td>
+            </tr>
+            <tr>
+              <td>Trámites administrativos</td>
+              <td>Gestión de permisos de obra y habilitaciones</td>
+              <td>Valor fijo + gastos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px">* Los valores exactos se actualizan mensualmente. Descargá la planilla oficial vigente para los montos actuales.</p>
+    </section>
+
+    <!-- PARÁMETROS -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">¿Cómo se calculan?</span>
+          <h2>Parámetros de cálculo</h2>
+        </div>
+      </div>
+      <div class="cards-grid" style="margin-top:0">
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          </div>
+          <h3>Superficie</h3>
+          <p>La cantidad de metros cuadrados del proyecto es el factor principal en el cálculo de honorarios proporcionales.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <h3>Complejidad</h3>
+          <p>Los proyectos con mayor complejidad técnica o programática (hospitales, edificios en altura, rehabilitaciones) tienen coeficientes más altos.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+          </div>
+          <h3>Ubicación</h3>
+          <p>La localización dentro de la provincia puede implicar traslados y condiciones climáticas especiales que afectan el presupuesto.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+          </div>
+          <h3>Costo de obra</h3>
+          <p>El valor de referencia de la construcción se actualiza mensualmente en base a índices oficiales de la construcción.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2z"/></svg>
+          </div>
+          <h3>Etapa del proyecto</h3>
+          <p>Cada etapa (prefactibilidad, anteproyecto, proyecto, dirección) tiene un porcentaje diferente del honorario total.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+          </div>
+          <h3>Tipo de intervención</h3>
+          <p>Obra nueva, ampliación, refacción o cambio de destino tienen criterios distintos de valorización del servicio.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANILLAS PDF -->
+    <section class="content-section reveal">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Documentos oficiales</span>
+          <h2>Planillas para descarga</h2>
+        </div>
+        <a class="button" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">Ver todas en catdf.org.ar</a>
+      </div>
+      <p style="color:var(--muted);font-size:15px;margin-bottom:28px">Las planillas en formato PDF están disponibles en el sitio oficial del CATDF, organizadas mes a mes desde junio 2024. Hacé clic en cualquier período para descargar el documento correspondiente.</p>
+
+      <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;color:var(--muted)">2026</h3>
+      <div class="pdf-list">
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Mayo 2026</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Abril 2026</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Marzo 2026</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Febrero 2026</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Enero 2026</span>
+        </a>
+      </div>
+
+      <h3 style="font-size:16px;font-weight:700;margin:32px 0 16px;color:var(--muted)">2025</h3>
+      <div class="pdf-list">
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Diciembre 2025</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Noviembre 2025</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Octubre 2025</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Septiembre 2025</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Agosto 2025</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Julio 2025</span>
+        </a>
+        <a class="pdf-item" href="https://catdf.org.ar/doc/inicio/honorarios.html" target="_blank" rel="noopener">
+          <svg class="pdf-icon" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/></svg>
+          <span>Junio 2025</span>
+        </a>
+      </div>
+
+      <div style="margin-top:32px;padding:20px 24px;background:var(--accent-light);border-radius:var(--radius);border-left:4px solid var(--accent)">
+        <p style="font-size:14px;color:var(--text);margin:0"><strong>Nota legal:</strong> Las planillas de honorarios sugeridos son de carácter orientativo. El CATDF recomienda su uso como referencia mínima, pero cada profesional puede acordar libremente sus honorarios con el comitente respetando los mínimos establecidos por Resolución N° 904/24.</p>
+      </div>
+    </section>
+
+    <!-- CONTRATOS -->
+    <section class="content-section reveal" style="border-bottom:none">
+      <div class="two-col">
+        <div class="content-img">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=900&q=80" alt="Contratos profesionales">
+        </div>
+        <div class="content-text">
+          <span class="eyebrow">Protegé tu trabajo</span>
+          <h2>Modelos de contratos profesionales</h2>
+          <p>El CATDF pone a disposición modelos de contratos profesionales para formalizar la relación con el comitente, establecer con claridad el alcance de los servicios y proteger los derechos del arquitecto.</p>
+          <p>Utilizá estos modelos como punto de partida y adaptálos a cada proyecto particular. Ante cualquier duda, consultá con la sede más cercana.</p>
+          <a class="button secondary" href="index.html#contacto">Consultar al Colegio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/A-logo.png" alt="CATDF" class="footer-logo">
+        <div><strong>CATDF</strong><p>Colegio de Arquitectos<br>de Tierra del Fuego</p></div>
+      </div>
+      <div class="footer-links">
+        <h4>Institución</h4>
+        <a href="institucional.html">Misión y autoridades</a>
+        <a href="matriculacion.html">Matriculación</a>
+        <a href="honorarios.html">Honorarios sugeridos</a>
+        <a href="profesionales.html">Directorio profesional</a>
+      </div>
+      <div class="footer-links">
+        <h4>Servicios</h4>
+        <a href="https://autogestion.catdf.org.ar/catdfautogestion.html" target="_blank" rel="noopener">Autogestión</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <div class="footer-links">
+        <h4>Sedes</h4>
+        <p>Ushuaia · Yaganes 271</p>
+        <p>Río Grande · Ricardo Rojas 983</p>
+        <p>Tolhuin · Centro Cultural</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CATDF — Colegio de Arquitectos de Tierra del Fuego</p>
+      <p>Propuesta de diseño web</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
